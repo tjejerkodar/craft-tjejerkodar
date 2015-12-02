@@ -1,0 +1,83 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # See Twig’s Template Inheritance documentation for more details:
+ # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+ #}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<link rel="home" href="{{ siteUrl }}" />
+<!--
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/build/main.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="{{ siteUrl }}js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="{{ siteUrl }}js/script.js"></script>
+	
+</head>
+
+<body>
+	<div id="container">
+		<div class="menu-btn">
+			<span class="span"></span>
+			<span class="span"></span>
+			<span class="span"></span>
+		</div>		
+		<nav {% if craft.request.firstSegment == '' %}class="hide"{% endif %}>
+			<a href="{{ siteUrl }}" class="logolink"><img src="image/fejklogo.png"></img></a>
+			<ul>
+				<li><a href="{{ url('london') }}">London camp</a></li>
+				<li><a href="{{ url('palma') }}">Palma camp</a></li>
+				<li><a href="{{ url('about') }}">About us</a></li>
+				<li><a href="{{ url('press') }}">Press</a></li>
+			</ul>
+		</nav>
+
+		
+		<main id="content" role="main">
+			{% block content %}
+				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+			{% endblock %}
+		</main>
+
+
+		<footer class="footer l-box is-center">
+			<h3>
+				Tjejer kodar
+			</h3>
+			<p> 
+				Tjejer Kodar is an initiative organised by Hornstullhack HB. 
+			</p>
+			<p>
+				Org. nr 969775-1981
+			</p>
+			<p>
+				Slipgatan 9, 117 39 Stockholm
+			</p>
+
+			<h3>
+				hello@hornstullhack.se
+			</h3>
+			<a href="https://www.facebook.com/tjejerkodar/"><img src="image/facebook.png"/></a>
+			<a href="https://twitter.com/tjejerkodar"><img src="image/twitter.png"/></a>
+			<img src="image/linkedin.png"/>
+
+		</footer>
+	</div>
+</body>
+</html>

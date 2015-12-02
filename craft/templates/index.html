@@ -1,0 +1,298 @@
+{#
+ # Homepage template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://buildwithcraft.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+	
+	<div class="text-header">
+		<img src="image/logo-text.png" />
+	</div>
+
+	<div class="media-header">
+		<video src="image/header-movie.mp4" width="1280" height="720" autoplay="" loop="" muted="" id="video" poster="">
+	        Oh no! Your browser does not support video.
+	    </video>
+	</div>
+	<nav class="startpage-menu">
+		<ul>
+			<li><a href="{{ url('london') }}">London camp</a></li>
+			<li><a href="{{ url('palma') }}">Palma camp</a></li>
+			<li><a href="{{ url('about') }}">About us</a></li>
+		</ul>
+	</nav>
+
+	<div class="about">
+		<h3>
+			Learn how to code, our way
+		</h3>
+		<h1>
+			Code Camps at Inspiring Destinations
+		</h1>
+
+		<div class="puff-wrapper pure-g">
+			<div class="puff pure-u-1 pure-u-sm-1-3">
+				<img src="image/laptop-circle.png">
+				<h3>
+					Hands on learning
+				</h3>
+				<p>
+					Work together with teachers and developers from leading tech companies to build something inspiring.
+				</p>
+			</div>
+			<div class="puff pure-u-1 pure-u-sm-1-3">
+				<img src="image/globe-circle.png">
+				<h3>
+					Great experience
+				</h3>
+				<p>
+					We believe learning should be fun and inspiring. Our courses force you to leave your everyday life and gain new experiences along the way.
+
+				</p>
+			</div>
+			<div class="puff pure-u-1 pure-u-sm-1-3">
+				<img src="image/smile-circle.png">
+				<h3>
+					Amazing network
+				</h3>
+				<p>
+					We promise you’ll meet new friends, but also people who you can continue hack with.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="camp">
+		<h1>Följ med på vårt nästa läger 100 tejer kodar </h1>
+		<a href="https://www.instagram.com/tjejerkodar/">jag vill följa med</a>
+	</div>
+
+	<div class="previous-courses pure-g">
+
+		<div class="course pure-u-1 pure-u-sm-1-2">
+			<div class="caption">
+				<h3>
+		       		Previous camp
+		    	</h3>
+		    	<a href="{{ url('palma') }}"><h1>
+		    		One week of basic web programming in Palma
+		    	</h1></a>
+			</div>
+			
+		</div>
+		<div class="course pure-u-1 pure-u-sm-1-2">
+			<div class="caption">
+				<h3>
+					Previous camp
+			    </h3>
+			    <a href="{{ url('london') }}"><h1>
+			    	One weekend of javascript and React.js in London
+			    </h1></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="press">
+		<div class="pure-g press-inner">
+			<div class="pure-u-1">
+				<h1>Mentioned in</h1>
+			</div>
+
+			<div class="brand-item pure-u-1-2 pure-u-sm-1-4">
+				<div>
+					<img src="image/logo-tv4.png" />
+				</div>
+			</div>
+			<div class="brand-item pure-u-1-2 pure-u-sm-1-4">
+				<div>
+					<img src="image/logo-SR.png" />
+				</div>
+			</div>
+			<div class="brand-item pure-u-1-2 pure-u-sm-1-4">
+				<div>
+					<img src="image/logo-CS.png" />
+				</div>
+			</div>
+			<div class="brand-item pure-u-1-2 pure-u-sm-1-4">
+				<div>
+					<img src="image/logo-feber.png" />
+				</div>
+			</div>
+			<div class="brand-item pure-u-1-2 pure-u-sm-1-4">
+				<div>
+					<img src="image/logo-breakit.png" />
+				</div>
+			</div>
+			<div class="brand-item pure-u-1-2 pure-u-sm-1-4">
+				<div>
+					<img src="image/logo-DI.png" />
+				</div>
+			</div>
+			<div class="brand-item pure-u-1-2 pure-u-sm-1-4">
+				<div>
+					<img src="image/logo-DN.png" />
+				</div>
+			</div>
+			<div class="brand-item pure-u-1-2 pure-u-sm-1-4">
+				<div>
+					<img src="image/logo-VA.png" />
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<div class="newsletter">
+		<h1>
+			Get information about our camps
+		</h1>
+		<p>
+			Sign up to our newsletter to get information about upcoming camps and events.
+		</p>
+		<a class=" pure-button pure-button-primary" href="http://eepurl.com/bHKVMH">Keep me updated</a>
+	</div>
+
+	<div class="team pure-g">
+
+		<div class="logo">
+
+		</div>
+
+		{% cache for 1 hour %}
+
+		{% set counter = 0 %}
+
+		{% for member in craft.entries.section('team') %}
+
+
+<!-- kollar om det finns någon asset om den gör det så skriver den ut bilden i style -->
+		<div class="thumb pure-u-1-2 pure-u-sm-1-3 pure-u-lg-1-6"
+
+			{% if member.img | length %}
+    			{% for asset in member.img %}
+        			style="background-image:url({{ asset.getUrl('thumb300') }});"
+    			{% endfor %}
+			{% endif %}
+		>
+
+			<div class="teamcaption">
+				<h3>{{ member.title }}</h3>
+				<p>{{ member.workTitle }}</p>
+				<p>{{ member.email }}</p>
+			</div>
+			
+		</div>
+
+		{% set counter = counter + 1 %}
+
+		{% if counter == 5 %}
+			
+				<div class="thumb wood pure-u-1-2 pure-u-sm-1-3 pure-u-lg-1-6">
+					<div class="helpout">
+						<h3>Want to help out?</h3>
+						<p><a href="mailto:hello@hornstullhack.se">Drop us a line</a></p>
+					</div>
+				</div>
+
+			{% endif %}
+
+		{% endfor %}
+
+		{% endcache %}
+
+	</div>
+<!--
+	<div class="content-wrapper">
+
+	    <div class="ribbon l-box-lrg pure-g">
+	        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+	           
+	           <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+	            <p>
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	                consequat. Duis aute irure dolor.
+	            </p>
+	        </div>
+	        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+	            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+	            <p>
+	                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	                consequat. Duis aute irure dolor.
+	            </p>
+	        </div>
+	    </div>
+
+	    <div class="content">
+	        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+	        <div class="pure-g">
+	            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+	                <form class="pure-form pure-form-stacked">
+	                    <fieldset>
+
+	                        <label for="name">Your Name</label>
+	                        <input id="name" type="text" placeholder="Your Name">
+
+
+	                        <label for="email">Your Email</label>
+	                        <input id="email" type="email" placeholder="Your Email">
+
+	                        <label for="password">Your Password</label>
+	                        <input id="password" type="password" placeholder="Your Password">
+
+	                        <button type="submit" class="pure-button">Sign Up</button>
+	                    </fieldset>
+	                </form>
+	            </div>
+	        -->
+
+	        
+	        </div>
+
+    	</div>
+    <!--
+	<h1>Sandra {{ entry.title }}</h1>
+
+	<div class="pure-g">
+		{% if entry.img | length %}
+		    {% for asset in entry.img %}
+		      <div class="pure-u-1-3 thumb" style="background-image:url({{ asset.url }});"/></div>
+		    {% endfor %}
+		{% endif %}
+	</div>
+
+	{{ entry.body }}
+
+	<h2>Recent News</h2>
+	<ul>
+		{% for entry in craft.entries.section('news').limit(5).find() %}
+			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+		{% endfor %}
+	</ul>
+
+-->
+{% endblock %}
