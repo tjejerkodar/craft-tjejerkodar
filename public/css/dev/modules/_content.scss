@@ -1,0 +1,32 @@
+.content {
+	background-color: white;
+	padding-top: 60px;
+	padding-bottom: 80px;
+	padding-left: 40px;
+	padding-right: 40px;
+	text-align: center;
+
+	.text-wrapper {
+		max-width: 650px;
+		margin: auto;
+	}
+
+	.hero-text {
+		font-size: 3em;
+		line-height: 1.2;
+		color: $primary;
+	}
+
+	h1 {
+		padding-top: 20px;
+		line-height: 1.2;
+	}
+
+	ul {
+		padding: 0px;
+	}
+
+	li {
+		list-style: none;
+	}
+}

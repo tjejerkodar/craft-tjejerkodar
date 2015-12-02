@@ -1,0 +1,74 @@
+.courses-block {
+	padding-top: 60px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 60px;
+	background-color: $grey;
+
+	img {
+		width: 100px;
+		margin: auto;
+		display: block;
+	}
+
+	p {
+		text-align: center;
+	}
+
+	.camp-description {
+		max-width: 500px;
+		margin: auto;
+	}
+
+	.card-wrapper {
+		padding-top: 50px;
+		text-align: center;
+		padding-bottom: 60px;
+
+		.card {
+			display: inline-block;
+			width: 250px;
+			position: relative;
+
+			.card-thumb {
+	            height: 80px;
+	            width: 80px;
+	            border-radius: 40px;
+	            background: grey;
+	            margin: auto;
+	            position: absolute;
+	            bottom: -40px;
+	            left: 50%;
+	            margin-left: -40px;
+	        }
+
+		    .card-head {
+		        background: $compliment;
+		        position: relative;
+		        border-radius: 20px;
+
+		        &:before {
+		            content:"";
+		            display: block;
+		            padding-top: 100%;
+		        }
+
+		        h3 {
+		        	color: white;
+		            text-align: center;
+		            top: 50%;
+		        }
+
+		        .card-description {
+		        	position: absolute;
+		        	top: 50%;
+		        	width: 100%;
+		        	margin: auto;
+
+		   	 	}
+		    }
+
+		}
+
+	}
+}

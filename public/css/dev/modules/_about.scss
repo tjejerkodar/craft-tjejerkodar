@@ -1,0 +1,41 @@
+.about {
+	width: 100%;
+	background-color: white;
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	padding-left: 40px;
+	padding-right: 40px;
+
+	.puff {
+		padding: 20px;
+	}
+
+	h1 {
+		color: $primary;
+		margin-top: 0px;
+		margin-bottom: 60px;
+		line-height: 1.2;
+
+	}
+
+	p {
+		max-width: 650px;
+		margin: auto;
+	}
+	img {
+		width: 100px;
+		height: 86px;
+	}
+
+	a {
+		border: solid 2px $primary;
+		background-color: white;
+		color: $primary;
+
+		&:hover {
+			background-color: $primary;
+			color: white;
+		}
+	}
+}

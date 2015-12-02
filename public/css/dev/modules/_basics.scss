@@ -1,0 +1,43 @@
+$primary: #34d2a5;
+$secondary: #B431F4;
+$compliment: #bf1d7a;
+$grey: #f8f8f8;
+
+$darkgrey: rgba(70,98,108,0.24);
+
+$text-color: #414c52;
+$font: 'Varela Round', sans-serif;
+$body-font: 'Open Sans', sans-serif;
+
+
+body {
+	font-family: $body-font;
+	font-weight: 400;
+	color: $text-color;
+}
+
+h3 {
+	font-family: $font;
+	font-weight: 600;
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: $text-color;
+}
+
+h2 {
+	text-align: center;
+	color: $text-color;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+
+
+a.pure-button-primary {
+	background-color: $primary;
+}
+
+p {
+	font-family: $body-font;
+}

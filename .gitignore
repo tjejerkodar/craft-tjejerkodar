@@ -1,0 +1,9 @@
+/craft/app
+/craft/config
+/craft/plugins
+/craft/storage
+/public/_thumb300
+/node_modules
+.sass-cache
+.DS_Store
+.htacess

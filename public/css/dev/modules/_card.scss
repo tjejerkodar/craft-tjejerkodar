@@ -1,0 +1,29 @@
+.card {
+
+    .card-head {
+        background: #fdd736;
+        position: relative;
+
+        &:before {
+            content:"";
+            display: block;
+            padding-top: 100%;
+        }
+
+        h3 {
+            font-size: 30px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+        }
+    }
+
+    .card-description {
+
+        .card-thumb {
+            height: 40px;
+            width: 40px;
+            background: grey;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+.press {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background: white;
+	text-align: center;
+
+	.press-inner{
+		max-width: 900px;
+		margin: 0 auto;
+
+		h1 {
+			padding-bottom: 40px;
+		}
+
+		.brand-item{
+			div {
+				border-bottom: 1px solid #efefef;
+				border-right: 1px solid #efefef;
+				position: relative;
+				text-align: center;
+
+
+				img {
+					width: 100px;
+					margin: 0px auto;
+					position: absolute;
+					left: 50%;
+					margin-left: -50px;
+					top: 50%;
+					margin-top: -50px;
+
+
+					@media screen and (min-width: 568px) {	
+
+						width: 120px;
+						margin: 0px auto;
+						position: absolute;
+						left: 50%;
+						margin-left: -60px;
+						top: 50%;
+						margin-top: -60px;
+					}
+
+
+				}
+
+				&:after{
+					content: "";
+					padding-bottom: 66%;
+					width: 100%;
+					display: block;
+				}
+			}
+			&:last-child{
+				div{
+					border:0px;
+				}
+			}
+
+			&:nth-last-child(2){
+				div{
+					border-bottom: 0px;
+				}
+			}
+
+			@media screen and (min-width: 568px) {
+				
+				&:nth-last-child(3){
+					div {
+						border-bottom: 0px;
+					}
+				}
+
+				&:nth-last-child(4){
+					div {
+						border-bottom: 0px;
+					}
+				}
+
+				&:nth-last-child(5){
+					div {
+						border-right: 0px;
+					}
+				}
+
+			}
+
+			
+		}
+	}
+
+}

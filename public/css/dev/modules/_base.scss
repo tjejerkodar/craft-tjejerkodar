@@ -1,0 +1,37 @@
+body{
+	font-size: 15px;
+	background: #f1f1f1;
+	margin: 0;
+
+}
+a {
+	text-decoration: none;
+
+}
+h1 {
+	margin:0;
+	padding: 24px 0;
+
+}
+
+.thumb {
+	height: 250px;
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	&:nth-child(1){
+		background-image: "";
+
+	}
+	&:nth-child(2){
+		background-image: "";		
+		background-color: #aaa;
+
+	}
+	&:nth-child(2){
+		background-image: "";
+		
+	}
+
+}

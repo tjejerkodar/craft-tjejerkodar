@@ -1,0 +1,60 @@
+/* SET HEIGHT FOR DEVICES, ALSO USED IN TEXT HEADER */
+$heroheight-s: 400px;
+$heroheight-m: 540px;
+
+$heroheight-s-light: 100px;
+$heroheight-m-light: 240px;
+
+.media-header {
+	background-image: url(../../image/palma.jpg);
+	background-size: cover;
+	height: $heroheight-s;
+	top: 0px;
+	z-index: -1;
+	overflow: hidden;
+	width: 100%;
+	position: absolute;
+
+	@media screen and (min-width: 960px) {	
+		height: $heroheight-m;
+	}
+
+	&.london {
+
+		background-image: url(../../image/london-header.jpg);
+		background-position: center;
+		height: $heroheight-s-light;
+
+		@media screen and (min-width: 960px) {	
+			height: $heroheight-m-light;
+		}
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		height: 100%;
+		width: 100%;
+		background-color: black;
+		opacity: 0.2;
+		position: absolute;
+		top: 0;
+	}
+
+	video {
+		height: $heroheight-s;
+		width: auto;
+		margin-left: -25%;
+
+		@media screen and (min-width: 480px) {
+			margin-left: 0px;
+		}
+
+		@media screen and (min-width: 715px) {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+

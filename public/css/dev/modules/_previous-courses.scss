@@ -1,0 +1,97 @@
+.previous-courses {
+	position: relative; 
+
+	.previous-logo {
+		background-image: url(../../image/previous-camps.png);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		width: 150px;
+		height: 150px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -75px;
+		margin-top: -75px;
+		z-index: 10;
+
+	}
+
+	.course {
+		height: 350px;
+		background-size: cover;
+		position: relative;
+
+		a {
+			text-decoration: none;
+		}
+
+		@media screen and (min-width: 48em) {
+			height: 450px;
+		}
+
+		&:nth-child(1) {
+			background-image: url(../../image/palma-seal.jpg);
+		}
+
+		&:nth-child(2) {
+			background-image: url(../../image/coding.jpg);
+		}
+
+		&:after {
+			content: "";
+			height: 100%;
+			width: 100%;
+			background-color: black;
+			opacity: 0.4;
+			position: absolute;
+			top: 0;
+		}
+
+		&:hover {
+
+			&:after {
+				opacity: 0.6;
+				transition: opacity 0.2s ease-in;
+
+			}
+		}
+
+
+		h3 {
+			text-align: left;
+			padding-left: 40px;
+			margin-bottom: 5px;
+			padding-right: 40px;
+			color: $compliment;
+		}
+
+		h1 {
+			color: white;
+			padding-right: 40px;
+			padding-left: 40px;
+			line-height: 1.2;
+			margin: 0px;
+		}
+
+		p {
+			font-family: $font;
+			color: white;
+			padding-left: 40px;
+			padding-right: 40px;
+			font-size: 26px;
+			line-height: 30px;
+			margin-top: 0px;
+			padding-bottom: 40px;
+			width: 100%;
+			margin-bottom: 0px;
+		}
+
+		.caption {
+			position: absolute;
+			bottom: 0;
+			z-index: 5;
+			padding-bottom: 40px;
+
+		}
+	}
+}
