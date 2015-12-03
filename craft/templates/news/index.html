@@ -11,13 +11,16 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "News" %}
+{% set title = "Blog" %}
 
 {% block content %}
-	<h1>News</h1>
+	<div class="blog-header">
+		<h3>Tjejer Kodar Blog</h3>
+		<h1>A catchy line that wants you to read further</h1>
+	</div>
 
 	{% for entry in craft.entries.section('news').find() %}
-		<article>
+		<article class="featured">
 			<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
 			<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
 			{{ entry.body.getPage(1) }}

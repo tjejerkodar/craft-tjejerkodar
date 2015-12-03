@@ -1,0 +1,38 @@
+.pitch {
+  text-align: center;
+  padding-top: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 80px;
+  background-color: #f8f8f8;
+
+  .background {
+    background-color: #bf1d7a;
+  }
+  .background h1,
+  .background h2,
+  .background h3,
+  .background p {
+    color: white;
+  }
+  .background .white {
+    border: 2px solid white;
+  }
+   h1 {
+    color: #bf1d7a;
+    line-height: 1.2;
+    max-width: 650px;
+    margin: auto;
+    margin-bottom: 16px;
+  }
+   h2 {
+    color: #34d2a5;
+    max-width: 650px;
+    margin: auto;
+  }
+  p {
+    max-width: 650px;
+    margin: auto;
+    padding-bottom: 16px;
+  }
+}

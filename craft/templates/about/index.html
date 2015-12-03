@@ -122,7 +122,7 @@
 
 				{% if member.img | length %}
 	    			{% for asset in member.img %}
-	        			style="background-image:url({{ asset.url }});"
+	        			style="background-image:url({{ asset.getUrl('thumb300') }});"
 	    			{% endfor %}
 				{% endif %}
 			>

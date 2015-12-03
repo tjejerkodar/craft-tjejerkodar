@@ -30,7 +30,7 @@
 			</h1>
 
 			<p>
-				In October, 20 women were challenged to learn the basics of JavaScript and React during a weekend in London. The goal was to finish 20 To-do applications made in React – Everyone finished! The weekend was made together with the team @iZettle. 
+				{{ entry.heroText }}
 			</p>
 		</div>
 	</div>
@@ -138,7 +138,7 @@
 
 			{% if member.img | length %}
     			{% for asset in member.img %}
-        			style="background-image:url({{ asset.url }});"
+        			style="background-image:url({{ asset.getUrl('thumb300') }});"
     			{% endfor %}
 			{% endif %}
 		>
