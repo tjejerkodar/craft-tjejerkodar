@@ -32,7 +32,16 @@ h2 {
 	line-height: 30px;
 }
 
-
+.square-button {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $compliment;
+	background-color: white;
+	font-weight: bold;
+	padding: 18px 30px;
+	display: inline-block;
+	font-family: $body-font;
+}
 
 a.pure-button-primary {
 	background-color: $primary;

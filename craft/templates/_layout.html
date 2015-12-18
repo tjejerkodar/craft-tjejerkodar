@@ -20,7 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/build/main.css">
+	<link rel="stylesheet" type="text/css" href="{{ siteUrl }}css/build/main.css?v=1">
 
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -40,7 +40,7 @@
 			<span class="span"></span>
 		</div>		
 		<nav {% if craft.request.firstSegment == '' %}class="hide"{% endif %}>
-			<a href="{{ siteUrl }}" class="logolink"><img src="image/fejklogo.png"></img></a>
+			<a href="{{ siteUrl }}" class="logolink"><img src="{{ siteUrl }}/image/fejklogo.png"></img></a>
 			<ul>
 				<li><a href="{{ url('london') }}">London camp</a></li>
 				<li><a href="{{ url('palma') }}">Palma camp</a></li>
@@ -75,9 +75,9 @@
 			<h3>
 				hello@hornstullhack.se
 			</h3>
-			<a href="https://www.facebook.com/tjejerkodar/"><img src="image/facebook.png"/></a>
-			<a href="https://twitter.com/tjejerkodar"><img src="image/twitter.png"/></a>
-			<a href="https://instagram.com/tjejerkodar"><img src="image/instagram.png"/></a>
+			<a href="https://www.facebook.com/tjejerkodar/"><img src="{{ siteUrl }}/image/facebook.png"/></a>
+			<a href="https://twitter.com/tjejerkodar"><img src="{{ siteUrl }}/image/twitter.png"/></a>
+			<a href="https://instagram.com/tjejerkodar"><img src="{{ siteUrl }}/image/instagram.png"/></a>
 
 		</footer>
 	</div>

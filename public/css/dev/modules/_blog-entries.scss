@@ -1,0 +1,158 @@
+.blog-entries {
+	padding: 80px 40px;
+	padding-top: 20px;
+
+	a {
+		text-decoration: none;
+
+	}
+
+	.categories {
+		margin: auto;
+		max-width: 980px;
+		text-align: center;
+		padding-bottom: 20px;
+
+		.active {
+
+		h3 {
+			color: $text-color;
+
+		}
+
+		}
+
+		h3:hover {
+			color: $text-color;
+		}
+
+		h3 {
+			display: inline-block;
+			color: $primary;
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+	}
+
+	.hero-entry {
+		max-width: 980px;
+		margin: auto;
+		text-align: center;
+		padding-bottom: 40px;
+
+		@media screen and (min-width: 35.5em) {
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+
+		.hero-image {
+			background-size: cover;
+			background-position: center;
+			height: 300px;
+
+		}
+
+		.background {
+			background-color: $grey;
+			padding-bottom: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+			position: relative;
+
+			.entry-information {
+
+				@media screen and (min-width: 35.5em) {
+					padding-top: 35px;
+				}
+
+				@media screen and (min-width: 750px) {
+					padding-top: 0px;
+					max-width: 295px;
+					position: absolute;
+					left: 50%;
+					margin-left: -147.5px;
+					top: 50%;
+					margin-top: -96px;
+
+				}
+
+				.square-button {
+					color: $primary;
+				}
+			}
+		}
+	}
+
+	.entry-listing {
+		max-width: 980px;
+		margin: auto;
+	}
+
+	.entry {
+		padding-bottom: 40px;
+
+		@media screen and (min-width: 35.5em) {
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+
+		.hero-image {
+			background-size: cover;
+			background-position: center;
+			height: 200px;
+		}
+
+	}
+	
+	.contact {
+		max-width: 980px;
+		margin: auto;
+		margin-top: 20px;
+		padding: 40px 20px;
+		background-color: $grey;
+		text-align: center;
+
+		@media screen and (min-width: 48em) {
+			padding: 20px 20px;
+
+		}
+
+		@media screen and (min-width: 64em) {
+			padding: 20px 40px;
+
+		}
+
+
+		p {
+			float: left;
+			margin: 0px;
+		}
+
+		h3 {
+			font-family: $font;
+			margin: 0px;
+
+			@media screen and (min-width: 35.5em) {
+				text-align: left;
+				padding-top: 5px;
+
+			}
+
+			@media screen and (min-width: 48em) {
+				padding-top: 20px;
+
+			}
+		
+		}
+
+		.a-right {
+			padding-top: 20px;
+
+			@media screen and (min-width: 35.5em) {
+				text-align: right;
+				padding-top: 0px;
+			}
+		}
+
+	}
+}

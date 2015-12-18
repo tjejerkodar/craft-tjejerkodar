@@ -1,0 +1,30 @@
+.writers {
+	background-color: $primary;
+	padding: 80px 40px;
+	text-align: center;
+
+	h1 {
+		color: white;
+		padding-bottom: 40px;
+		line-height: 1.2;
+	}
+
+	.all-authors {
+		max-width: 980px;
+		margin: auto;
+	}
+
+	.author-wrap {
+		padding-bottom: 20px;
+	}
+	
+	.author {
+		background-size: cover;
+		background-position: center;
+		width: 120px;
+		height: 120px;
+		margin: auto;
+		border-radius: 90px;
+		
+	}
+}

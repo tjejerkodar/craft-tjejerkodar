@@ -16,9 +16,49 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<article>
+<div class="entry-wrapper">
+
+	{% if entry.heroImage | length %}
+		{% for image in entry.heroImage %}
+		<div class="hero-image" style="background-image: url({{ image.getUrl() }});">
+		</div>
+		{% endfor %}
+	{% endif %}
+
+	<article class="entry">
+		<p class="date">Posted on {{ entry.postDate.format('F d, Y') }}</p>
 		<h1>{{ entry.title }}</h1>
-		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+		<p class="caption">
+			{{ entry.captionText }}
+		</p>
 		{{ entry.body }}
 	</article>
+	<div class="author">
+		<div class="author-img" style="background-image: url({{ entry.author.photoUrl(84) }})">
+		</div>
+		<div class="author-text">
+			<h3>{{ entry.author.fullName }}</h3>
+			{{ entry.author.body }}
+		</div>
+	</div>
+
+</div>
+<div class="page-pagination">
+	{% set newsCriteria = craft.entries.section('news').order('postDate desc') %}
+	{% set prevEntry = entry.getPrev(newsCriteria) %}
+	{% set nextEntry = entry.getNext(newsCriteria) %}
+
+	{% if prevEntry %}
+		<div class="prev">
+  			<a href="{{ prevEntry.url }}"><span>Read previous: </span>{{ prevEntry.title }}</a>
+  		</div>
+	{% endif %}
+
+	{% if nextEntry %}
+		<div class="next">
+ 		 	<a href="{{ nextEntry.url }}"><span>Read next: </span>{{ nextEntry.title }}</a>
+ 		</div>
+	{% endif %}
+		
+</div>
 {% endblock %}

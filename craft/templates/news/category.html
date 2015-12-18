@@ -21,41 +21,14 @@
 
 	<div class="blog-entries">
 		<div class="categories">
-			<a href="{{ url('news') }}" class="active"><h3>All</h3></a>
-
+			<a href="{{ url('news') }}"><h3>All</h3></a>
 		{% nav cat in craft.categories.group('blogPosts') %}
-			<a href="{{ cat.url }}"><h3>{{ cat.title }}</h3></a>
+			<a href="{{ cat.url }}" {% if category.url == cat.url %} class="active" {% endif %}><h3>{{ cat.title }}</h3></a>
 		{% endnav %}
 		</div>
 
-		<div class="hero-entry">
-		{% for entry in craft.entries.section('news').limit(1).find() %}
-			<article>
-				<div class="pure-g">
-			{% if entry.heroImage | length %}
-				{% for image in entry.heroImage %}
-					<div class="hero-image pure-u-1 pure-u-sm-1-2" style="background-image: url({{ image.getUrl() }});">
-					</div>
-				{% endfor %}
-			{% endif %}
-
-					<div class="background pure-u-1 pure-u-sm-1-2">
-						<div class="entry-information">
-							<a href="{{ entry.url }}"><h3>{{ entry.title }}</h3></a>
-							<p>
-								{{entry.captionText|slice(1,50)}}
-							</p>
-							<a class="square-button" href="{{ entry.url }}">Continue reading</a>
-						</div>
-					</div>
-				</div>
-
-			</article>
-		{% endfor %}
-		</div>
-
 		<div class="entry-listing pure-g">
-		{% for entry in craft.entries.section('news').offset(1).find() %}
+		{% for entry in craft.entries.section('news').relatedTo(category).find() %}
 			<article class="pure-u-1 pure-u-sm-1-2 pure-u-lg-1-3 entry">
 			{% if entry.heroImage | length %}
 				{% for image in entry.heroImage %}
@@ -84,6 +57,7 @@
 	</div>
 
 	<div class="writers">
+	
 
 		<h1>We write for Tjejer Kodar</h1>
 		<div class="all-authors pure-g">
